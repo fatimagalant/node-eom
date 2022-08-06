@@ -11,7 +11,16 @@
           <div class="col-md-4">Help</div>
         </div>
         <!-- Copyright and socials -->
-        <div class="row"></div>
+        <div class="row">
+          <div id="copyright-info" class="col-md-4"></div>
+          <div id="socials" class="col-md-4">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+          <div id="location/language" class="col-md-4"></div>
+        </div>
       </div>
     </footer>
   </div>
