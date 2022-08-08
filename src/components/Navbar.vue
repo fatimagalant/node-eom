@@ -6,9 +6,6 @@
     <div v-if="user">
       <router-link class="text" to="/admin">Admin</router-link>
     </div>
-    <div v-else-if="Register">
-      <router-link class="text" to="/register">Register</router-link>
-    </div>
     <div v-else>
       <router-link class="text" to="/login">Login</router-link>
     </div>

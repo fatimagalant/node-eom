@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Your food has been ordered</h1>
+    <h1>Your car has been ordered!</h1>
   </div>
 </template>
 <script>
