@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "full_name": "Fatima Galant",
+      "email": "fatima@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "full_name": "Tristan Chezlin Daniels",
+      "email": "tristan@gmail.com",
+      "password": "password"
+    }
+  ],
+  "cars": [
+    {
+      "name": "Nissan Silvia (S15)",
+      "image": "https://i.postimg.cc/bvjrJDxb/Nissan-Silvia-S15.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Nissan Skyline GTR (R34)",
+      "image": "https://i.postimg.cc/wxRCWf8q/Nissan-Skyline-GTR-34.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Toyota Supra (MK4)",
+      "image": "https://i.postimg.cc/GtS9hXKh/Toyota-Supra-MK4.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Subaru Legacy (BP5)",
+      "image": "https://i.postimg.cc/QNB32N5r/Subaru-Legacy-BP5.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Honda NSX-R",
+      "image": "https://i.postimg.cc/Kj80BY2v/Honda-RSX-R.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Mitsubishi Lancer Evolution 8",
+      "image": "https://i.postimg.cc/BnFfXmp7/Mitsubishi-Lancer-Evolution-8.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Mazda RX-7 (FD3S)",
+      "image": "https://i.postimg.cc/tC5X9Sr3/Mazda-RX-7.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Toyota Supra (MK5)",
+      "image": "https://i.postimg.cc/8cGSSMMX/Toyota-Supra-MK5.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Subaru Impreza WRX STi",
+      "image": "https://i.postimg.cc/8cqD09wW/Subaru-Impreza-WRX-STi.jpg",
+      "category": "JDM",
+      "price": ""
+    },
+    {
+      "name": "Nissan 370z",
+      "image": "https://i.postimg.cc/0jNbsTpB/Nissan-370z.jpg",
+      "category": "JDM",
+      "price": ""
+    }
+  ]
+}
