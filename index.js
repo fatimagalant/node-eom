@@ -13,22 +13,7 @@ app.use("/users", userRoute);
 //for product
 const productRoute = require("./routes/productRoute");
 app.use("/products", productRoute);
-//for categories
-const categoryRoute = require("./routes/categoryRoute");
-app.use("/categories", categoryRoute);
-//for orders
-const orderRoute = require("./routes/orderRoute");
-app.use("/orders", orderRoute);
-//for order_details
-const order_detailRoute = require("./routes/order_detailRoute");
-app.use("/order_details", order_detailRoute);
-//for product_categories
-const product_categoryRoute = require("./routes/product_categoryRoute");
-app.use("/product_categories", product_categoryRoute);
-app.listen(app.get("port"), () => {
-  console.log(`Listening for calls on port ${app.get("port")}`);
-  console.log("Press Ctrl+C to exit server");
-});
+
 app.use(express.static("public"));
 app.get("/", function (req, res) {
   res.sendFile(_dirname + "/" + "login.html");

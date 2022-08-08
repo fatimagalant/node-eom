@@ -19,14 +19,13 @@
       </caption>
       <thead>
         <tr>
-          <th>Email</th>
-          <th>Password</th>
-          <th>full name</th>
-          <th>billing address</th>
-          <th>default shipping address</th>
-          <th>country</th>
-          <th>phone</th>
-          <th>user type</th>
+          <th>fullname</th>
+          <th>email</th>
+          <th>user password</th>
+          <th>user role</th>
+          <th>phone number</th>
+          <th>join date</th>
+          <th>cart</th>
         </tr>
       </thead>
       <tbody id="users"></tbody>
@@ -48,14 +47,13 @@
         users.forEach((user) => {
           userContainer.innerHTML += `
      <tr>
-        <th>${user.email}</th>
-        <td>${user.password}</td>
-        <td>${user.full_name}</td>
-        <td>${user.billing_address}</td>
-        <td>${user.default_shipping_address}</td>
-        <td>${user.country}</td>
-        <td>${user.phone}</td>
-        <td>${user.user_type}</td>
+        <th>${user.fullname}</th>
+        <td>${user.email}</td>
+        <td>${user.userpassword}</td>
+        <td>${user.userRole}</td>
+        <td>${user.phonenumber}</td>
+        <td>${user.joinDate}</td>
+        <td>${user.cart}</td>
       </tr>
     `;
         });

@@ -3,7 +3,7 @@ const router = express.Router();
 const con = require("../lib/db_connection");
 const middleware = require("../middleware/auth");
 const jwt = require("jsonwebtoken");
-const nodfullnameer = require("nodfullnameer");
+const nodemailer = require("nodemailer");
 
 router.get("/", (req, res) => {
   try {
@@ -239,7 +239,7 @@ router.post("/forgot-psw", (req, res) => {
         res.status(400), res.send("fullname not found");
       } else {
         // Allows me to connect to the given fullname account || Your fullname
-        const transporter = nodfullnameer.createTransport({
+        const transporter = nodemailer.createTransport({
           host: process.env.MAILERHOST,
           port: process.env.MAILERPORT,
           auth: {

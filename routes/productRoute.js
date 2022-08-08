@@ -16,21 +16,11 @@ router.get("/", (req, res) => {
 
 // Add
 router.post("/", (req, res) => {
-  const {
-    sku,
-    name,
-    price,
-    weight,
-    descriptions,
-    thumbnail,
-    image,
-    category,
-    create_date,
-    stock,
-  } = req.body;
+  const { title, category, description, imgURL, price, userID, quantity } =
+    req.body;
   try {
     con.query(
-      `INSERT INTO products (sku, name, price, weight, descriptions, thumbnail, image, category, create_date, stock) values ('${sku}','${name}','${price}','${weight}','${descriptions}','${thumbnail}','${image}','${category}','${create_date}','${stock}')`,
+      `INSERT INTO products (title, category, description, imgURL, price, userID, quantity) values ('${title}','${category}','${description}','${imgURL}','${price}','${userID}','${quantity}')`,
       (err, result) => {
         if (err) throw err;
         res.send(result);
@@ -43,21 +33,11 @@ router.post("/", (req, res) => {
 
 // Edit
 router.patch("/:id", (req, res) => {
-  const {
-    sku,
-    name,
-    price,
-    weight,
-    descriptions,
-    thumbnail,
-    image,
-    category,
-    create_date,
-    stock,
-  } = req.body;
+  const { title, category, description, imgURL, price, userID, quantity } =
+    req.body;
   try {
     con.query(
-      `UPDATE products set sku = "${sku}", name = "${name}", price = "${price}", weight = "${weight}", descriptions = "${descriptions}", thumbnail = "${thumbnail}", image = "${image}", category = "${category}", create_date = "${create_date}", stock = "${stock}" WHERE product_id = "${req.params.id}"`,
+      `UPDATE products set title = "${title}", category = "${category}", description = "${description}", imgURL = "${imgURL}", price = "${price}", userID = "${userID}", quantity = "${quantity}" WHERE product_id = "${req.params.id}"`,
       (err, result) => {
         if (err) throw err;
         res.send(result);

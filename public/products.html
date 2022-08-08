@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta category="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -19,16 +19,13 @@
       </caption>
       <thead>
         <tr>
-          <th>sku</th>
-          <th>name</th>
-          <th>price</th>
-          <th>weight</th>
-          <th>descriptions</th>
-          <th>thumbnail</th>
-          <th>image</th>
+          <th>title</th>
           <th>category</th>
-          <th>create date</th>
-          <th>stock</th>
+          <th>description</th>
+          <th>imgURL</th>
+          <th>price</th>
+          <th>userID</th>
+          <th>quantity</th>
         </tr>
       </thead>
       <tbody id="products"></tbody>
@@ -50,16 +47,13 @@
         products.forEach((product) => {
           productContainer.innerHTML += `
      <tr>
-        <th>${product.sku}</th>
-        <td>${product.name}</td>
-        <td>${product.price}</td>
-        <td>${product.weight}</td>
-        <td>${product.descriptions}</td>
-        <td>${product.thumbnail}</td>
-        <td>${product.image}</td>
+        <th>${product.title}</th>
         <td>${product.category}</td>
-        <td>${product.create_date}</td>
-        <td>${product.stock}</td>
+        <td>${product.description}</td>
+        <td>${product.imgURL}</td>
+        <td>${product.price}</td>
+        <td>${product.userID}</td>
+        <td>${product.quantity}</td>
       </tr>
     `;
         });
