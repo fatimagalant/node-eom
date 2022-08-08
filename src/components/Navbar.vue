@@ -26,12 +26,12 @@ export default {
 
 <style scoped>
 nav {
-  background-color: #42b983;
+  background-color: black;
 }
 .text {
   color: white;
 }
 nav a.router-link-exact-active {
-  color: black;
+  color: purple;
 }
 </style>
