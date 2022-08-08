@@ -2,11 +2,7 @@
   <input type="text" v-model="search" placeholder="Search" />
   <select v-model="category">
     <option value="All" selected>All</option>
-    <option value="Starter">Starter</option>
-    <option value="Main">Main</option>
-    <option value="Dessert">Dessert</option>
-    <option value="Drinks">Drink</option>
-    <option value="Sides">Side</option>
+    <option value="JDM">JDM</option>
   </select>
 
   <table class="table">
@@ -24,16 +20,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in items" :key="item.id">
-        <td scope="row">{{ item.id }}</td>
-        <td><img :src="item.image" class="image" /></td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.description }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ item.category }}</td>
-        <td>{{ item.image }}</td>
+      <tr v-for="car in cars" :key="car.id">
+        <td scope="row">{{ car.id }}</td>
+        <td><img :src="car.image" class="image" /></td>
+        <td>{{ car.name }}</td>
+        <td>{{ car.description }}</td>
+        <td>{{ car.price }}</td>
+        <td>{{ car.category }}</td>
+        <td>{{ car.image }}</td>
         <td><EditModal /></td>
-        <td><i class="fa-solid fa-trash-can" @click="deleteItem(item.id)"></i></td>
+        <td>
+          <i class="fa-solid fa-trash-can" @click="deletecar(car.id)"></i>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -42,7 +40,7 @@
 import store from "@/store";
 import EditModal from "../components/EditModal.vue";
 export default {
-  components: { EditModal, },
+  components: { EditModal },
   data() {
     return {
       email: "", //This makes the default input an empty string
@@ -56,12 +54,12 @@ export default {
     user() {
       return this.$store.state.user; //Pulls the array from the store
     },
-    items() {
-      return this.$store.state.items?.filter((item) => {
+    cars() {
+      return this.$store.state.cars?.filter((car) => {
         let isMatch = true;
-        if (!item.name?.toLowerCase().includes(this.search.toLowerCase()))
+        if (!car.name?.toLowerCase().includes(this.search.toLowerCase()))
           isMatch = false;
-        if (this.category !== "All" && item.category !== this.category)
+        if (this.category !== "All" && car.category !== this.category)
           isMatch = false;
         return isMatch;
       });
@@ -70,7 +68,7 @@ export default {
 
   mounted() {
     if (!this.user) this.$router.push("/login");
-    this.$store.dispatch("getItems");
+    this.$store.dispatch("getcars");
   },
 
   methods: {
@@ -84,8 +82,8 @@ export default {
       );
     },
 
-    deleteItem(id) {
-      this.$store.dispatch("deleteItem", id);
+    deletecar(id) {
+      this.$store.dispatch("deletecar", id);
     },
   },
 };
