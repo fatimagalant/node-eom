@@ -5,6 +5,7 @@
         <div class="row">
           <!-- links to other pages -->
           <div class="col-md-4">Links</div>
+          <a href="./views/Auction.vue">Auction</a>
           <!-- Contact -->
           <div class="col-md-4">Contact</div>
           <!-- Location -->
