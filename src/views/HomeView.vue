@@ -5,13 +5,8 @@
     <hr class="text-muted" />
     <h1>stu tu tu tu</h1>
     <div class="container">
-      <button type="button" id="button" class="btn btn-outline-dark">
-        <a href="/auction">Auction</a>
-      </button>
-
-      <button type="button" id="button" class="btn btn-outline-dark">
-        <a href="/contact">Contact</a>
-      </button>
+      <button type="button" class="btn btn-dark"><a href="/auction">Auction</a></button>
+      <button type="button" class="btn btn-dark"><a href="/contact">Contact</a></button>
     </div>
   </section>
   <section id="About">
@@ -41,6 +36,20 @@
               <div class="carousel-item">
                 <img
                   src="https://i.postimg.cc/gktTSxrt/anthony-bautista-Jwmu-Q3-CX6-Zo-unsplash.jpg"
+                  class="carousel-img d-block w-100"
+                  alt="Mazda RX7"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://i.postimg.cc/KjvtR1Bw/pexels-supreet-7749310.jpg"
+                  class="carousel-img d-block w-100"
+                  alt="Mazda RX7"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://i.postimg.cc/T3mQ8W9J/chris-demers-yve-Hitu4u-LQ-unsplash.jpg"
                   class="carousel-img d-block w-100"
                   alt="Mazda RX7"
                 />
@@ -156,11 +165,12 @@ export default {
     font-family: "Raleway", sans-serif;
   }
 }
-.button {
+.btn-link {
   color: white;
   border-radius: 0 !important;
   width: 100px;
   height: 50px;
+  gap: 30px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -184,11 +194,8 @@ export default {
   filter: drop-shadow(10px 10px 3px rgba(0, 0, 0, 0.3));
   transition: 3s ease-in-out;
 }
-.carousel {
-  /* padding-top: 1rem; */
-}
+
 .carousel-img {
-  padding-top: 10px;
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
