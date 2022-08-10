@@ -1,10 +1,9 @@
 <template>
-    <div class="register">
-        <h1> This is a register page </h1>
-        
-    </div>
-    <Footer />
+  <div class="register">
     <Navbar />
+    <h1>This is a register page</h1>
+  </div>
+  <Footer />
 </template>
 <script>
 import Footer from "../components/Footer.vue";
@@ -16,6 +15,4 @@ export default {
   },
 };
 </script>
-<style>
-    
-</style>
+<style></style>

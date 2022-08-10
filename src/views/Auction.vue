@@ -1,10 +1,9 @@
 <template>
-    <div class="auction">
-        <h1> This is an auction page </h1>
-        
-    </div>
-    <Footer />
-    <Navbar />
+  <Navbar />
+  <div class="auction">
+    <h1>This is an auction page</h1>
+  </div>
+  <Footer />
 </template>
 <script>
 import Footer from "../components/Footer.vue";
@@ -16,6 +15,4 @@ export default {
   },
 };
 </script>
-<style>
-    
-</style>
+<style></style>

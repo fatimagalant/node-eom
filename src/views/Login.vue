@@ -1,10 +1,9 @@
 <template>
-    <div class="login">
-        <h1> This is a login page </h1>
-        
-    </div>
-    <Footer />
+  <div class="login">
     <Navbar />
+    <h1>This is a login page</h1>
+  </div>
+  <Footer />
 </template>
 <script>
 import Footer from "../components/Footer.vue";
@@ -16,6 +15,4 @@ export default {
   },
 };
 </script>
-<style>
-    
-</style>
+<style></style>
