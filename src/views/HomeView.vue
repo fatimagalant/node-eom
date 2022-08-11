@@ -5,8 +5,10 @@
     <hr class="text-muted" />
     <h1>stu tu tu tu</h1>
     <div class="container">
-      <button type="button" class="btn btn-dark"><a href="/auction">Auction</a></button>
-      <button type="button" class="btn btn-dark"><a href="/contact">Contact</a></button>
+      <div class="button" id="button-2">
+        <div id="slide"></div>
+        <a href="/contact">Contact</a>
+      </div>
     </div>
   </section>
   <section id="About">
@@ -133,6 +135,7 @@ export default {
 <style scoped>
 #Landing {
   background-image: url("https://i.postimg.cc/cJmqN7V5/Landing.jpg");
+  background-attachment: fixed;
   overflow-x: hidden;
   background-size: cover;
   background-position: center;
@@ -165,17 +168,58 @@ export default {
     font-family: "Raleway", sans-serif;
   }
 }
-.btn-link {
-  color: white;
-  border-radius: 0 !important;
-  width: 100px;
-  height: 50px;
-  gap: 30px;
-  justify-content: center;
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #bfc0c0;
+  margin: 20px 20px 20px 20px;
+  color: #bfc0c0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
   align-items: center;
-  text-align: center;
-  text-decoration-line: none;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0a0908;
 }
+
+a {
+  color: #dadada;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+#button-2 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-2 a {
+  position: relative;
+  transition: all 0.35s ease-Out;
+}
+
+#slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background: blueviolet;
+  position: absolute;
+  transition: all 0.35s ease-Out;
+  bottom: 0;
+}
+
+#button-2:hover #slide {
+  left: 0;
+}
+
+#button-2:hover a {
+  color: #2d3142;
+}
+
 #About {
   background-color: #0a0908;
   overflow-x: hidden;
@@ -196,6 +240,7 @@ export default {
 }
 
 .carousel-img {
+  padding-top: 6rem;
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
