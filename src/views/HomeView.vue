@@ -140,7 +140,7 @@ export default {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  color: rgb(0, 0, 0);
+  color: white;
   display: flex;
   flex-direction: column;
   /* justify-content: center;
