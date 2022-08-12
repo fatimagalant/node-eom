@@ -152,7 +152,7 @@ export default {
   font-size: 10rem;
   font-weight: 900;
   font-family: "Raleway", sans-serif;
-  text-shadow: 5px 5px 5px grey;
+  text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 @media screen and (max-width: 686px) {
   .heading {

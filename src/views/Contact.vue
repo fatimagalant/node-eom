@@ -27,7 +27,11 @@
         <div class="contact">
           <h3>Contact Us</h3>
 
-          <form id="contact-form">
+          <form
+            action="https://formspree.io/f/xdojoegd"
+            method="POST"
+            id="contact-form"
+          >
             <p>
               <label>First Name</label>
               <input
