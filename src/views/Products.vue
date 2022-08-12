@@ -50,6 +50,9 @@
 <script>
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
+
+// import ProductCards from "../components/ProductCards.vue";
+
 export default {
   components: {
     Footer,

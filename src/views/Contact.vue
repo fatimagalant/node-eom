@@ -1,6 +1,7 @@
 <template>
   <section id="contact">
     <Navbar />
+          <h3 class="header">Contact Us</h3>
     <div class="container">
       <div class="wrapper">
         <!-- COMPANY INFORMATION -->
@@ -25,7 +26,6 @@
 
         <!-- CONTACT FORM -->
         <div class="contact">
-          <h3>Contact Us</h3>
 
           <form
             action="https://formspree.io/f/xdojoegd"
@@ -106,19 +106,25 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,300&family=Poppins:wght@300&family=Prata&family=Raleway:wght@300&family=Work+Sans:wght@300&display=swap");
 #contact {
-  background-image: url("https://i.postimg.cc/5yyfbdf4/patrik-storm-alstra-pictures-ZKFr6lp-EF3-U-unsplash.jpg");
+  background-image: url("https://i.postimg.cc/NjbbyhFx/milad-fakurian-n-Y14-Fs8px-T8-unsplash.jpg");
   overflow-x: hidden;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+  background-attachment: fixed;
   color: rgb(0, 0, 0);
+}
+.header{
+  font-size: 5rem;
+  padding-top: 4rem;
+  font-weight:700
 }
 .container[data-v-df212a54] {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
-  padding-top: 10rem;
+  padding-top: 2rem;
 }
 
 #contact-img {
