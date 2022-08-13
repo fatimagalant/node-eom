@@ -26,6 +26,15 @@ export default {
     Footer,
     Navbar,
   },
+    props: ["id"],
+  computed: {
+    product() {
+      return this.$store.state.product;
+    },
+  },
+  mounted() {
+    this.$store.dispatch("getSingleproduct", this.id);
+  },
 };
 </script>
 <style></style>

@@ -124,33 +124,33 @@ export default createStore({
     },
   },
 });
-const form = document.getElementById("formData");
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  // V-Model
-  let fullname = document.getElementById("fullname").value;
-  let email = document.getElementById("email").value;
-  let userpassword = document.getElementById("userpassword").value;
-  let userRole = document.getElementById("userRole").value;
-  let phonenumber = document.getElementById("phonenumber").value;
-  let joinDate = document.getElementById("joinDate").value;
-  let cart = document.getElementById("cart").value;
-  fetch("http://localhost:6969/users/register", {
-    method: "POST",
-    body: JSON.stringify({
-      fullname: fullname,
-      email: email,
-      userpassword: userpassword,
-      userRole: userRole,
-      phonenumber: phonenumber,
-      joinDate: joinDate,
-    }),
-    headers: {
-      "Content-type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    });
-});
+// const form = document.getElementById("formData");
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   // V-Model
+//   let fullname = document.getElementById("fullname").value;
+//   let email = document.getElementById("email").value;
+//   let userpassword = document.getElementById("userpassword").value;
+//   let userRole = document.getElementById("userRole").value;
+//   let phonenumber = document.getElementById("phonenumber").value;
+//   let joinDate = document.getElementById("joinDate").value;
+//   let cart = document.getElementById("cart").value;
+//   fetch("http://localhost:6969/users/register", {
+//     method: "POST",
+//     body: JSON.stringify({
+//       fullname: fullname,
+//       email: email,
+//       userpassword: userpassword,
+//       userRole: userRole,
+//       phonenumber: phonenumber,
+//       joinDate: joinDate,
+//     }),
+//     headers: {
+//       "Content-type": "application/json",
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//     });
+// });

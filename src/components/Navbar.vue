@@ -11,7 +11,6 @@
         <nav class="nav-links">
           <router-link to="/">Home </router-link>
           <router-link to="/products">Products </router-link>
-          <!-- <router-link to="/product:id">Single Product </router-link> -->
           <router-link to="/contact">Contact </router-link>
           <router-link to="/login">Login </router-link>
           <router-link to="/register">Register </router-link>
@@ -44,17 +43,23 @@ export default {};
   padding: 20px;
   background-color: #000000;
   justify-content: space-around;
+  background:transparent;
 }
 .navbar {
-  position: fixed;
+  position: sticky;
   width: 100%;
   background: #000000;
+  /* background:transparent; */
   color: white;
   /* color: #000; */
-  opacity: 0.85;
-  z-index: 100;
+  opacity: 0.4;
+  z-index: 1;
 }
-
+nav a {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    /* color: #a89ab9; */
+}
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -78,7 +83,7 @@ export default {};
 }
 
 .navbar a {
-  color: rgb(172, 172, 172);
+  /* color: rgb(168, 168, 168); */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
@@ -134,7 +139,7 @@ export default {};
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #333;
+    background: rgb(255, 255, 255);
   }
 
   .navbar-container .hamburger-lines .line1 {
@@ -207,8 +212,12 @@ export default {};
     aspect-ratio: 1;
     object-fit: contain;
   } */
-}
+  .nav-links{
+    display: flex;
+    flex-direction: column;
+  }
 
+};
 @media (max-width: 500px) {
   .navbar-container input[type="checkbox"]:checked ~ .logo {
     display: none;

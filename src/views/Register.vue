@@ -1,6 +1,6 @@
 <template>
-  <Navbar />
   <section id="register">
+  <Navbar />
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-2"></div>
@@ -56,6 +56,29 @@ export default {
   components: {
     Footer,
     Navbar,
+  },
+    computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  data() {
+    return {
+      fullName: "",
+      role: "",
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    register() {
+      this.$store.dispatch("register", {
+        fullName: this.fullName,
+        role: this.role,
+        email: this.email,
+        password: this.password,
+      });
+    },
   },
 };
 </script>

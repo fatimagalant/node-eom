@@ -1,6 +1,6 @@
 <template>
-  <Navbar />
   <section id="Login">
+  <Navbar />
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-2"></div>
@@ -9,17 +9,24 @@
             <i class="fa-solid fa-user-large"></i>
           </div>
           <div class="col-lg-12 login-title">Login</div>
-
+ <div id="login-margin">
+          <h1 v-if="user" id="login-header"><a href="/products">Check out our cars</a></h1>
+          <p id="login-subheader" class="py-2" v-if="user">
+            {{ user.fullname }}
+          </p>
+          <p id="login-subheader" class="py-2" v-else>
+            our vast collection awaits...
+          </p>
           <div class="col-lg-12 login-form">
             <div class="col-lg-12 login-form">
-              <form>
+    <form @submit.prevent="login" id="form-container">
                 <div class="form-group">
-                  <label class="form-control-label">EMAIL</label>
-                  <input type="email" class="form-control" />
+                  <label for="emailField" class="form-control-label" required>EMAIL</label>
+                  <input v-model="email" type="email"    name="emailField" class="form-control" />
                 </div>
                 <div class="form-group">
-                  <label class="form-control-label">PASSWORD</label>
-                  <input type="password" class="form-control" i />
+                  <label for="passwordField" class="form-control-label" required>PASSWORD</label>
+                  <input v-model="password" type="password" name="passwordField" class="form-control" i />
                 </div>
 
                 <div class="col-lg-12 loginbttm">
@@ -27,22 +34,22 @@
                     <!-- Error Message -->
                   </div>
                   <div class="col-lg-6 login-btm login-button">
-                    <button type="submit" class="btn btn-outline-primary">
+              <button id="btn-login" class="btn btn-outline-primary">
                       LOGIN
                     </button>
+    </div>
+    </div>
+              </form>
                     <p class="text-align-center register-here">
                       Don't have an account ? Register
                       <a href="/register">here</a>
                     </p>
                   </div>
                 </div>
-              </form>
             </div>
           </div>
-          <div class="col-lg-3 col-md-2"></div>
         </div>
       </div>
-    </div>
   </section>
   <Footer />
 </template>
@@ -54,7 +61,30 @@ export default {
     Footer,
     Navbar,
   },
-};
+      computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password,
+      });
+    },
+  },
+  mounted() {
+    console.log(this.user);
+  },
+  };
+
 </script>
 <style scoped>
 #Login {

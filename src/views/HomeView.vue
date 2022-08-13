@@ -1,6 +1,6 @@
 <template>
-  <Navbar />
   <section id="Landing">
+  <Navbar />
     <heading class="heading">JDM Precision</heading>
     <hr class="text-muted" />
     <h1>stu tu tu tu</h1>
@@ -146,9 +146,9 @@ export default {
   /* justify-content: center;
   align-items: center; */
   text-align: center;
-  padding-top: 15rem;
 }
 .heading {
+  padding-top: 15rem;
   font-size: 10rem;
   font-weight: 900;
   font-family: "Raleway", sans-serif;
@@ -160,6 +160,9 @@ export default {
     font-weight: 900;
     font-family: "Raleway", sans-serif;
   }
+}
+.nav-links{
+  color: black !important;
 }
 @media screen and (max-width: 500px) {
   .heading {
