@@ -62,6 +62,24 @@ export default createStore({
       // }
       // console.log(userData);
     },
+    register: async (context, payload) => {
+      const { fullname, email, userpassword, userRole } = payload;
+
+      fetch("https://jdm-precision.herokuapp.com/users", {
+        method: "POST",
+        body: JSON.stringify({
+          fullname: fullname,
+          email: email,
+          userpassword: password,
+          userRole: role,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("setUser", json));
+    },
     getproducts: async (context) => {
       //async (context) must ALWAYS be in
       const res = await fetch("https://jdm-precision.herokuapp.com/products")

@@ -45,6 +45,12 @@ export default {};
   justify-content: space-around;
   background:transparent;
 }
+/* .nav-links:active {
+  padding: 20px;
+  background-color: #000000;
+  justify-content: space-around;
+  background:transparent;
+} */
 .navbar {
   position: sticky;
   width: 100%;
@@ -89,7 +95,7 @@ nav a {
   transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover {
+.navbar a:hover, .nav a:active {
   color: #8b00db;
 }
 
