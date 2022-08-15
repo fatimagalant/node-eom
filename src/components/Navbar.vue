@@ -43,7 +43,7 @@ export default {};
   padding: 20px;
   background-color: #000000;
   justify-content: space-around;
-  background:transparent;
+  background: transparent;
 }
 /* .nav-links:active {
   padding: 20px;
@@ -62,9 +62,9 @@ export default {};
   z-index: 1;
 }
 nav a {
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    /* color: #a89ab9; */
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  /* color: #a89ab9; */
 }
 .navbar-container {
   display: flex;
@@ -95,7 +95,8 @@ nav a {
   transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover, .nav a:active {
+.navbar a:hover,
+.nav a:active {
   color: #8b00db;
 }
 
@@ -218,12 +219,11 @@ nav a {
     aspect-ratio: 1;
     object-fit: contain;
   } */
-  .nav-links{
+  .nav-links {
     display: flex;
     flex-direction: column;
   }
-
-};
+}
 @media (max-width: 500px) {
   .navbar-container input[type="checkbox"]:checked ~ .logo {
     display: none;

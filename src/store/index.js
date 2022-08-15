@@ -44,34 +44,32 @@ export default createStore({
   // Actions are for ASYNC / Fetch calls
   actions: {
     login: async (context, payload) => {
-      const { email, password } = payload;
-      const response = await fetch(
-        `https://jdm-precision.herokuapp.com/users?email=${email}&userpassword=${userpassword}` //the ${} is tha payload, and will compare the inputs to the original array
-      );
-      const userData = await response.json();
-      console.log(
-        `https://jdm-precision.herokuapp.com/users?email=${email}&userpassword=${userpassword}`
-      );
-      if (!userData.length) return alert("No user found with these details"); //Lets the user know that if the information put inside does not match the array, an alert will appear
-      context.commit("setUser", userData[0]);
-      // const isAdmin = userData[0].isAdmin;
-      // if (isAdmin === true) {
-      //   // router.push('')
-      // } else {
-      //   router.push("/");
-      // }
-      // console.log(userData);
+      const { email, userpassword } = payload;
+
+      fetch("https://jdm-precision.herokuapp.com/users/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          userpassword: userpassword,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("setUser", json.token));
     },
     register: async (context, payload) => {
-      const { fullname, email, userpassword, userRole } = payload;
+      const { fullname, email, userpassword, joinDate, phonenumber } = payload;
 
-      fetch("https://jdm-precision.herokuapp.com/users", {
+      fetch("https://jdm-precision.herokuapp.com/users/register", {
         method: "POST",
         body: JSON.stringify({
           fullname: fullname,
           email: email,
-          userpassword: password,
-          userRole: role,
+          userpassword: userpassword,
+          joinDate: joinDate,
+          phonenumber: phonenumber,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -94,11 +92,11 @@ export default createStore({
         .then((res) => res.json())
         .then((user) => context.commit("setUser", user));
     },
-    getSingleproduct: async (context, id) => {
-      fetch("https://jdm-precision.herokuapp.com/products/" + id)
-        .then((res) => res.json())
-        .then((product) => context.commit("setSingleproduct", product));
-    },
+    // getSingleproduct: async (context, id) => {
+    //   fetch("https://jdm-precision.herokuapp.com/products/" + id)
+    //     .then((res) => res.json())
+    //     .then((product) => context.commit("setSingleproduct", product));
+    // },
     createproduct: async (context, product) => {
       fetch("https://jdm-precision.herokuapp.com/products/", {
         method: "POST",

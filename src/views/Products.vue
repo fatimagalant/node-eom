@@ -1,9 +1,10 @@
 <template>
-
   <div id="products">
     <Navbar />
-    <div class="d-flex flex-row justify-content-center align-items mt-3 mb-3 pt-5">
-      <button class="form-control btn mb-3 me-3 btn-sm" @click="sortByPrice">
+    <div
+      class="d-flex flex-row justify-content-center align-items mt-3 mb-3 pt-5"
+    >
+      <button class="form-control btn mb-3 me-3 btn-sm" @click="sortByPrice()">
         Sort By Price
       </button>
       <input
@@ -32,18 +33,19 @@
         :key="product.product_id"
         class="product col-md-4 p-5"
       >
-        <div class="card">
-          <img class="car-image" v-bind:src="product.imgURL" alt="" />
-         <h2>{{ product.title }}</h2>
-          <!-- <p>{{ product.description }}</p>
+        <router-link
+          id="product-link"
+          :to="{ name: 'productDetails', params: { id: product.id } }"
+        >
+          <div class="card">
+            <img class="car-image" v-bind:src="product.imgURL" alt="" />
+            <h2>{{ product.title }}</h2>
+            <h2>{{ product.price }}</h2>
+            <!-- <p>{{ product.description }}</p>
           <p>{{ product.quantity }}</p>
           <p>${{ product.price }}</p> -->
-          <router-link
-            id="product-link"
-            :to="{ name: 'productDetails', params: { id: product.id } }"
-            >More info <i class="bi bi-arrow-right"></i
-          ></router-link>
-        </div>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -56,10 +58,16 @@ import Navbar from "../components/Navbar.vue";
 // import ProductCards from "../components/ProductCards.vue";
 
 export default {
+  data() {
+    return {
+      products: null,
+    };
+  },
   components: {
     Footer,
     Navbar,
   },
+
   mounted() {
     this.$store.dispatch("getproducts");
   },
@@ -68,7 +76,6 @@ export default {
       return this.$store.state.products;
     },
   },
-  
 };
 </script>
 <style scoped>
@@ -76,19 +83,19 @@ export default {
   background-color: white;
   overflow-x: hidden;
 }
-  ::-webkit-scrollbar {
-    display: none;
+::-webkit-scrollbar {
+  display: none;
 }
 
-  .card {
-    background-color:#F3F3F3;
+.card {
+  background-color: #f3f3f3;
   justify-content: center;
   align-content: center;
   gap: 30px;
   width: 500px;
   height: auto;
   border-radius: 0 !important;
-  box-shadow: 5px  5px 4px rgb(145, 130, 160);
+  box-shadow: 5px 5px 4px rgb(145, 130, 160);
 }
 /* .card {
     --bs-card-spacer-y: 1rem;
@@ -116,7 +123,7 @@ export default {
     height: var(--bs-card-height);
     word-wrap: break-word;
     /* background-color: var(--bs-card-bg); */
-    /* background-clip: border-box;
+/* background-clip: border-box;
     border: var(--bs-card-border-width) solid var(--bs-card-border-color);
     border-radius: var(--bs-card-border-radius);
 }  */

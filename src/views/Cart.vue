@@ -1,21 +1,21 @@
 <template>
   <body>
     <section class="Cart">
-    <Navbar />
-    <div class="wrapper">
-      <h1>Shopping Cart</h1>
-      <div class="project">
-        <div class="shop">
-          <div class="box">
-            <div class="content">
-              <div v-for="product of cartproducts" :key="product.id">
-                <!-- {{ product }} -->
-                <!-- <h4>Price:R {{ product.price }}</h4>
+      <Navbar />
+      <div class="wrapper">
+        <h1>Shopping Cart</h1>
+        <div class="project">
+          <div class="shop">
+            <div class="box">
+              <div class="content">
+                <div v-for="product of cartproducts" :key="product.id">
+                  <!-- {{ product }} -->
+                  <!-- <h4>Price:R {{ product.price }}</h4>
                 <h4>Price:R {{ product.price }}</h4> -->
-                <img :src="product.imgURL" class="mb-2" alt="car" />
-                <h3>{{ product.title }}</h3>
-                <p class="color-secondary">{{ product.category }}</p>
-                <!-- <p class="unit">
+                  <img :src="product.imgURL" class="mb-2" alt="car" />
+                  <h3>{{ product.title }}</h3>
+                  <p class="color-secondary">{{ product.category }}</p>
+                  <!-- <p class="unit">
                   Quantity:
                   <select name="quantity" id="quantity">
                     <option value="1">1</option>
@@ -30,28 +30,28 @@
                     <option value="10">10</option>
                   </select>
                 </p> -->
-                <button @click="deleteFromCart(product.id)" class="btn-area">
-                  <i class="fa fa-trash"></i>
-                  <span class="btn2">Remove</span>
-                </button>
-                <div class="right-bar">
-                  <p class="d-flex justify-content- gap-3">
-                    <span>Subtotal: R{{ product.price }}</span>
-                  </p>
-                  <hr />
+                  <button @click="deleteFromCart(product.id)" class="btn-area">
+                    <i class="fa fa-trash"></i>
+                    <span class="btn2">Remove</span>
+                  </button>
+                  <div class="right-bar">
+                    <p class="d-flex justify-content- gap-3">
+                      <span>Subtotal: R{{ product.price }}</span>
+                    </p>
+                    <hr />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <p class="namecart">
-        <span>Total</span> <span>R{{ calculatePrice }}</span>
-      </p>
-      <router-link to="/checkout">Checkout</router-link>
-    </div>
+      <div>
+        <p class="namecart">
+          <span>Total</span> <span>R{{ calculatePrice }}</span>
+        </p>
+        <router-link to="/login">Checkout</router-link>
+      </div>
     </section>
   </body>
 </template>

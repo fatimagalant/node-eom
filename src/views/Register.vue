@@ -1,6 +1,6 @@
 <template>
   <section id="register">
-  <Navbar />
+    <Navbar />
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-2"></div>
@@ -12,18 +12,47 @@
 
           <div class="col-lg-12 register-form">
             <div class="col-lg-12 register-form">
-              <form>
+              <form @submit.prevent="register">
                 <div class="form-group">
                   <label class="form-control-label">FULL NAME</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    v-model="fullname"
+                    type="text"
+                    placeholder="full name"
+                    class="form-control"
+                  />
                 </div>
                 <div class="form-group">
                   <label class="form-control-label">EMAIL</label>
-                  <input type="email" class="form-control" />
+                  <input
+                    v-model="email"
+                    type="email"
+                    placeholder="email"
+                    class="form-control"
+                  />
                 </div>
                 <div class="form-group">
                   <label class="form-control-label">PASSWORD</label>
-                  <input type="password" class="form-control" i />
+                  <input
+                    v-model="userpassword"
+                    type="password"
+                    placeholder="password"
+                    class="form-control"
+                    i
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">JOIN DATE</label>
+                  <input v-model="joinDate" type="date" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">PHONE NUMBER</label>
+                  <input
+                    v-model="phonenumber"
+                    type="number"
+                    placeholder="phone number"
+                    class="form-control"
+                  />
                 </div>
 
                 <div class="col-lg-12 registerbttm">
@@ -57,26 +86,30 @@ export default {
     Footer,
     Navbar,
   },
-    computed: {
+  computed: {
     user() {
       return this.$store.state.user;
     },
   },
   data() {
     return {
-      fullName: "",
-      role: "",
+      fullname: "",
       email: "",
-      password: "",
+      userpassword: "",
+      joinDate: "",
+      userRole: "",
+      phonenumber: "",
     };
   },
   methods: {
     register() {
       this.$store.dispatch("register", {
-        fullName: this.fullName,
-        role: this.role,
+        fullname: this.fullname,
         email: this.email,
-        password: this.password,
+        userpassword: this.userpassword,
+        joinDate: this.joinDate,
+        userRole: this.userRole,
+        phonenumber: this.phonenumber,
       });
     },
   },
