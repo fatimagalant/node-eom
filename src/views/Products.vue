@@ -39,8 +39,8 @@
         >
           <div class="card">
             <img class="car-image" v-bind:src="product.imgURL" alt="" />
-            <h2>{{ product.title }}</h2>
-            <h2>{{ product.price }}</h2>
+            <!-- <h2>{{ product.title }}</h2>
+            <h2>{{ product.price }}</h2> -->
             <!-- <p>{{ product.description }}</p>
           <p>{{ product.quantity }}</p>
           <p>${{ product.price }}</p> -->
@@ -80,7 +80,7 @@ export default {
 </script>
 <style scoped>
 #products {
-  background-color: white;
+  background-color: black;
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
@@ -95,7 +95,8 @@ export default {
   width: 500px;
   height: auto;
   border-radius: 0 !important;
-  box-shadow: 5px 5px 4px rgb(145, 130, 160);
+  border: none;
+  box-shadow: 5px 5px 4px rgb(80, 43, 117);
 }
 /* .card {
     --bs-card-spacer-y: 1rem;
@@ -137,9 +138,9 @@ export default {
   box-shadow: 3px 3px 3px rgba(32, 32, 32, 0.37);
 } */
 .car-image {
-  width: 499px;
-  height: 500px;
+  width: 100%;
+  height: 25rem;
   aspect-ratio: 1;
-  object-fit: contain;
+  object-fit: cover;
 }
 </style>

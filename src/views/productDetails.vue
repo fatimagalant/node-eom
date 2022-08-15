@@ -1,7 +1,7 @@
 <template>
-  <section id="item-view">
+  <section id="productDetails">
     <Navbar />
-    <div id="item-wrapper">
+    <!-- <div id="item-wrapper"> -->
       <div id="info-div">
         <div id="item-container" v-if="product">
           <div
@@ -35,7 +35,8 @@
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
+    <Footer />
   </section>
 </template>
 <script>
@@ -75,6 +76,10 @@ export default {
 };
 </script>
 <style scoped>
+#productDetails{
+  background-color: black;
+  color: white;
+}
 img.car-image {
   width: 500px;
   height: 500px;
