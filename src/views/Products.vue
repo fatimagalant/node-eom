@@ -39,11 +39,12 @@
         >
           <div class="card">
             <img class="car-image" v-bind:src="product.imgURL" alt="" />
-            <!-- <h2>{{ product.title }}</h2>
-            <h2>{{ product.price }}</h2> -->
-            <!-- <p>{{ product.description }}</p>
+            <!-- <div id="product-info">
+            <h2>{{ product.title }}</h2>
+            <h2>{{ product.price }}</h2>
           <p>{{ product.quantity }}</p>
-          <p>${{ product.price }}</p> -->
+          </div> -->
+            <!-- <p>{{ product.description }}</p>-->
           </div>
         </router-link>
       </div>
@@ -55,7 +56,6 @@
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 
-// import ProductCards from "../components/ProductCards.vue";
 
 export default {
   data() {
@@ -87,6 +87,9 @@ export default {
   display: none;
 }
 
+#product-info{
+  display: none;
+}
 .card {
   background-color: #f3f3f3;
   justify-content: center;
@@ -97,6 +100,21 @@ export default {
   border-radius: 0 !important;
   border: none;
   box-shadow: 5px 5px 4px rgb(80, 43, 117);
+}
+.card:hover #product-info {
+  background-color: #f3f3f3;
+  justify-content: center;
+  align-content: center;
+  gap: 30px;
+  width: 500px;
+  height: auto;
+  border-radius: 0 !important;
+  border: none;
+  box-shadow: 5px 5px 4px rgb(80, 43, 117);
+  		transform: translateY(20px);
+      		transition: 0.5s;
+          opacity: 0.4;
+          display: block;
 }
 /* .card {
     --bs-card-spacer-y: 1rem;

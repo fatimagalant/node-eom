@@ -25,7 +25,7 @@
                 <h4 class="my-1 text-black">Category:{{ product.category }}</h4>
                 <h5 class="my-1 text-black">Price: R {{ product.price }}</h5>
                 <p class="my-1 text-muted">qty: {{ product.quantity }}</p>
-                <button class="btn" @click="addToCart()">
+                <button class="btn" @click="addToCart">
                   <i class="fa-solid fa-cart-shopping"></i>
                 </button>
 
@@ -85,5 +85,11 @@ img.car-image {
   height: 500px;
   aspect-ratio: 1;
   object-fit: contain;
+}
+.product.col-md-4.p-5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
 }
 </style>
