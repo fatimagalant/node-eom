@@ -14,8 +14,12 @@
           <router-link to="/contact">Contact </router-link>
           <router-link to="/login">Login </router-link>
           <router-link to="/register">Register </router-link>
+          <router-link to="/admin">Admin </router-link>
           <router-link to="/cart"
             ><i class="fa-solid fa-cart-shopping"></i>
+          </router-link>
+          <router-link to="/account"
+            ><i class="fa-regular fa-user"></i>
           </router-link>
         </nav>
       </ul>
@@ -227,6 +231,23 @@ nav a {
 @media (max-width: 500px) {
   .navbar-container input[type="checkbox"]:checked ~ .logo {
     display: none;
+    height: 100%;
+  }
+  .nav-links {
+    z-index: 100;
+    position: fixed;
+    top: -150%;
+    left: 0;
+    right: 0;
+    height: 105vh;
+    background-color: black;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    transition: top 0.3s linear;
+  }
+  .nav-links.active {
+    top: 0;
   }
 }
 </style>

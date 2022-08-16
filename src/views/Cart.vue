@@ -4,7 +4,7 @@
       <Navbar />
       <div class="wrapper">
         <h1>Shopping Cart</h1>
-        <div class="project">
+        <div class="product">
           <div class="shop">
             <div class="box">
               <div class="content">
@@ -79,6 +79,9 @@ export default {
     product() {
       return this.$store.state.product;
     },
+  },
+  mounted() {
+    this.$store.dispatch("getSingleItem", this.id);
   },
 };
 </script>

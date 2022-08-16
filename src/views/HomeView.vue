@@ -1,13 +1,13 @@
 <template>
   <section id="Landing">
-  <Navbar />
+    <Navbar />
     <heading class="heading">JDM Precision</heading>
     <hr class="text-muted" />
     <h1>stu tu tu tu</h1>
     <div class="container">
       <div class="button" id="button-2">
         <div id="slide"></div>
-        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
       </div>
     </div>
   </section>
@@ -125,10 +125,12 @@
 // @ is an alias to /src
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
+import Account from "./Account.vue";
 export default {
   components: {
     Footer,
     Navbar,
+    Account,
   },
 };
 </script>
@@ -161,7 +163,7 @@ export default {
     font-family: "Raleway", sans-serif;
   }
 }
-.nav-links{
+.nav-links {
   color: black !important;
 }
 @media screen and (max-width: 500px) {

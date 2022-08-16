@@ -10,12 +10,13 @@
           </div>
           <h1 v-if="user" id="login-header">Welcome</h1>
           <h1 v-else id="login-header">Login</h1>
-          <p>our vast collection awaits...</p>
           <div id="login-margin">
             <h1 v-if="user" id="login-header">
               <a href="/products">Check out our cars</a>
             </h1>
-            <p id="login-subheader" class="py-2" v-else></p>
+            <p id="login-subheader" class="py-2" v-else>
+              our vast collection awaits...
+            </p>
             <p id="login-subheader" class="py-2" v-if="user">
               {{ user.fullname }}
             </p>
