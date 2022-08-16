@@ -149,13 +149,13 @@
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 import Account from "./Account.vue";
-import EditModal from "../components/EditModal.vue";
+import EditModal2 from "../components/Editmodal2.vue";
 export default {
   components: {
     Footer,
     Navbar,
     Account,
-    EditModal,
+    EditModal2,
   },
   computed: {
     users() {
