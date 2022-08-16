@@ -80,24 +80,25 @@ export default createStore({
     },
     getproducts: async (context) => {
       //async (context) must ALWAYS be in
-      const res = await fetch("https://jdm-precision.herokuapp.com/products")
+     fetch("https://jdm-precision.herokuapp.com/products")
         .then((res) => res.json())
-        .then((products) => {
-          context.commit("setproducts", products);
-        }); //sends the changes to the array
-      console.log(res);
+        .then((products) => 
+          context.commit("setproducts", products),
+        ); //sends the changes to the array
+        // console.log(products);
     },
     getUser: async (context) => {
       fetch("https://jdm-precision.herokuapp.com/users")
         .then((res) => res.json())
         .then((user) => context.commit("setUser", user));
     },
-    // getSingleproduct: async (context, id) => {
-    //   fetch("https://jdm-precision.herokuapp.com/products/" + id)
-    //     .then((res) => res.json())
-    //     .then((product) => context.commit("setSingleproduct", product));
-    // },
+    getSingleproduct: async (context, id) => {
+      fetch("https://jdm-precision.herokuapp.com/products/" + id)
+        .then((res) => res.json())
+        .then((product) => context.commit("setSingleproduct", product));
+    },
     createproduct: async (context, product) => {
+      // console.log(product);
       fetch("https://jdm-precision.herokuapp.com/products/", {
         method: "POST",
         body: JSON.stringify(product),
@@ -106,10 +107,11 @@ export default createStore({
         },
       })
         .then((response) => response.json())
-        .then(() => {
-          context.dispatch("getproducts", product);
+        .then((products) => {
+          console.log(products)
+          // context.dispatch("getproducts", product);
         });
-    },
+      },
     editproduct: async (context, product) => {
       fetch("https://jdm-precision.herokuapp.com/products/" + id, {
         method: "PUT",

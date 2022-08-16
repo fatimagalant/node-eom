@@ -14,11 +14,14 @@
             <h1 v-if="user" id="login-header">
               <a href="/products">Check out our cars</a>
             </h1>
-            <p id="login-subheader" class="py-2" v-else>
-              our vast collection awaits...
-            </p>
+            <h1 v-if="user" id="login-header">
+              <a href="/admin">Check out our admin page</a>
+            </h1>
             <p id="login-subheader" class="py-2" v-if="user">
               {{ user.fullname }}
+            </p>
+            <p id="login-subheader" class="py-2" v-else>
+              our vast collection awaits...
             </p>
 
             <div class="col-lg-12 login-form">

@@ -81,7 +81,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("getSingleItem", this.id);
+    this.$store.dispatch("getSingleproduct", this.id);
   },
 };
 </script>

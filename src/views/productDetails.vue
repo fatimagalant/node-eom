@@ -7,7 +7,7 @@
         <div
           v-for="product in product"
           :key="product.product_id"
-          class="product col-md-4 p-5"
+          class="product col-sm-6 p-5"
         >
           <div class="row">
             <div class="col-md-6">
@@ -79,15 +79,15 @@ export default {
   color: white;
 }
 img.car-image {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1;
-  object-fit: contain;
+  object-fit: cover;
 }
-.product.col-md-4.p-5 {
+/* .product.col-md-4.p-5 {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
-}
+} */
 </style>

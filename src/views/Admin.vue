@@ -83,7 +83,7 @@
               >
                 Cancel
               </button>
-              <button type="submit" class="btn btn-outline-dark">
+              <button type="btn" class="btn btn-outline-dark" @click="createproduct">
                 Create Car
               </button>
             </form>
@@ -167,7 +167,8 @@ export default {
     };
   },
   methods: {
-    createproduct() {
+    createproduct() 
+    {
       return this.$store.dispatch("createproduct", {
         title: this.title,
         category: this.category,
@@ -176,17 +177,15 @@ export default {
         price: this.price,
         quantity: this.quantity,
       });
+      // console.log("products")
     },
     product() {
       return this.$store.state.product;
     },
-  },
-  methods: {
     editproduct(id) {
       return this.$store.dispatch("editproduct", id);
     },
-  },
-  methods: {
+
     deleteproduct(id) {
       return this.$store.dispatch("deleteproduct", id);
     },
