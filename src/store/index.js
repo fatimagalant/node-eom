@@ -112,6 +112,21 @@ export default createStore({
           // context.dispatch("getproducts", product);
         });
       },
+      createuser: async (context, user) => {
+        // console.log(product);
+        fetch("https://jdm-precision.herokuapp.com/users/", {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((users) => {
+            console.log(users)
+            // context.dispatch("getusers", user);
+          });
+        },
     editproduct: async (context, product) => {
       fetch("https://jdm-precision.herokuapp.com/products/" + id, {
         method: "PUT",
